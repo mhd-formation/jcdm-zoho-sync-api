@@ -11,12 +11,13 @@ app.use(express.json());
  */
 
 const formationCheckboxMap = {
-  "coach professionnel rncp": "COACHING",
-  "formateur professionnel rncp": "FORMATEUR",
-  "fondamentaux du coaching": "COACHING",
-  "hypnothérapeute": "PRATICIEN_TB",
-  "psychopraticien": "PRATICIEN_TB",
-  "les fondamentaux de la relation d'aide": "PRATICIEN_TB"
+  "coach professionnel rncp": "Coaching_Professionnel",
+  "fondamentaux du coaching": "Coaching_Professionnel",
+  "hypnothérapeute": "Th_rapies_Br_ves",
+  "psychopraticien": "Th_rapies_Br_ves",
+  "les fondamentaux de la relation d'aide": "Th_rapies_Br_ves",
+  "formateur professionnel rncp": "Formateur",
+  "management": "Dirigeants_et_managers"
 };
 
 
