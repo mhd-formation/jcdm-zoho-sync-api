@@ -61,8 +61,8 @@ async function createContact(payload, token) {
     Phone: payload.phone,
     Mailing_Zip: payload.zipcode,
     Mailing_City: payload.city,
-    Projet_professionnel:payload.profile.professional_situation,
-    Niveau_d_tudes:payload.profile.education_level,
+    Projet_professionnel:payload?.profile?.professional_situation,
+    Niveau_d_tudes:payload?.profile?.education_level,
     ...(checkboxField ? { [checkboxField]: true } : {})
   };
 
