@@ -83,6 +83,7 @@ async function createContact(payload, token) {
 app.post("/webhook/jcdm", async (req, res) => {
   try {
     const payload = req.body;
+     console.log("Payload reçu sur /webhook/jcdm :", JSON.stringify(payload, null, 2));
     if (!payload?.email) {
       return res.status(500).json({ status: "error", message: "Email manquant" });
     }
