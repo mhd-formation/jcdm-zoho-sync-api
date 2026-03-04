@@ -52,7 +52,7 @@ async function createContact(payload, token) {
   const headers = { Authorization: `Zoho-oauthtoken ${token}` };
 
 
-  const formationName = payload.formation?.name? || "";
+  const formationName = payload.formation?.name?;
   const checkboxField = formationCheckboxMap[formationName];
   const commentaires = `${payload.agency ?? ""} ${payload.formation?.name ?? ""}`.trim();
   
