@@ -63,7 +63,7 @@ async function createContact(payload, token) {
     Phone: payload.phone,
     Mailing_Zip: payload.zipcode,
     Mailing_City: payload.city,
-    Projet_professionnel:payload?.profile?.professional_situation,
+    Projet_professionnel:payload?.profile?.professional_category,
     Niveau_d_tudes:payload?.profile?.education_level,
     Commentaires: commentaires,
     Lead_Source: "JeChangeDeMétier.com",
