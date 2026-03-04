@@ -11,12 +11,12 @@ app.use(express.json());
  */
 
 const formationCheckboxMap = {
-  "coach professionnel rncp": "Coaching_Professionnel",
-  "fondamentaux du coaching": "Coaching_Professionnel",
+  "Coach professionnel - Certification reconnue par l'État : titre RNCP Niveau 6 (Bac +3)": "Coaching_Professionnel",
+  "Formation Les fondamentaux du coaching": "Coaching_Professionnel",
   "hypnothérapeute": "Th_rapies_Br_ves",
   "psychopraticien": "Th_rapies_Br_ves",
-  "les fondamentaux de la relation d'aide": "Th_rapies_Br_ves",
-  "formateur professionnel rncp": "Formateur",
+  "Formation Les fondamentaux de la relation d'aide": "Th_rapies_Br_ves",
+  "Titre Professionnel Formateur professionnel d'adultes": "Formateur",
   "management": "Dirigeants_et_managers"
 };
 
@@ -54,7 +54,8 @@ async function createContact(payload, token) {
 
   const formationName = payload.formation?.name?.toLowerCase() || "";
   const checkboxField = formationCheckboxMap[formationName];
-
+  const commentaires = `${payload.agency ?? ""} ${payload.formation?.name ?? ""}`.trim();
+  
   const contact = {
     First_Name: payload.firstname,
     Last_Name: payload.lastname,
@@ -64,6 +65,7 @@ async function createContact(payload, token) {
     Mailing_City: payload.city,
     Projet_professionnel:payload?.profile?.professional_situation,
     Niveau_d_tudes:payload?.profile?.education_level,
+    Commentaires: commentaires,
     Lead_Source: "JeChangeDeMétier.com",
     ...(checkboxField ? { [checkboxField]: true } : {})
   };
