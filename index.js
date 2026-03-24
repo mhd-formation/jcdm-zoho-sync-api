@@ -17,7 +17,8 @@ const formationCheckboxMap = {
   "psychopraticien": "Th_rapies_Br_ves",
   "Formation Les fondamentaux de la relation d'aide": "Th_rapies_Br_ves",
   "Titre Professionnel Formateur professionnel d'adultes": "Formateur",
-  "management": "Dirigeants_et_managers"
+  "management": "Dirigeants_et_managers",
+  "Accompagnant en thérapies brèves": "Th_rapies_Br_ves"
 };
 
 
